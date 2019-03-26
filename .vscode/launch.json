@@ -1,0 +1,126 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ApplesProgram<ListOne>",
+            "request": "launch",
+            "mainClass": "ApplesProgram",
+            "projectName": "ListOne"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Calculator<ListOne>",
+            "request": "launch",
+            "mainClass": "Calculator",
+            "projectName": "ListOne"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FirstSemesterSales<ListOne>",
+            "request": "launch",
+            "mainClass": "FirstSemesterSales",
+            "projectName": "ListOne"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OddAndEven<ListOne>",
+            "request": "launch",
+            "mainClass": "OddAndEven",
+            "projectName": "ListOne"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PurchaseValues<ListOne>",
+            "request": "launch",
+            "mainClass": "PurchaseValues",
+            "projectName": "ListOne"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TargetShooting<ListOne>",
+            "request": "launch",
+            "mainClass": "TargetShooting",
+            "projectName": "ListOne"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<ListTree>",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "ListTree"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Average<ListTwo>",
+            "request": "launch",
+            "mainClass": "Average",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ConvertNumbersForNegative<ListTwo>",
+            "request": "launch",
+            "mainClass": "ConvertNumbersForNegative",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FastFood<ListTwo>",
+            "request": "launch",
+            "mainClass": "FastFood",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HigherPositionLowerPosition<ListTwo>",
+            "request": "launch",
+            "mainClass": "HigherPositionLowerPosition",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-IsLeapYear<ListTwo>",
+            "request": "launch",
+            "mainClass": "IsLeapYear",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Number08<ListTwo>",
+            "request": "launch",
+            "mainClass": "Number08",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Number09<ListTwo>",
+            "request": "launch",
+            "mainClass": "Number09",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Select<ListTwo>",
+            "request": "launch",
+            "mainClass": "Select",
+            "projectName": "ListTwo"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SepareteOddAndEven<ListTwo>",
+            "request": "launch",
+            "mainClass": "SepareteOddAndEven",
+            "projectName": "ListTwo"
+        }
+    ]
+}
