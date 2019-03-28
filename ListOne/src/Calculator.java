@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class Calculator {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int primaryValue = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro valor: "));
 		float total = primaryValue;
 		String r = "";

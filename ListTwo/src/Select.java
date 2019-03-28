@@ -3,7 +3,6 @@ import javax.swing.JOptionPane;
 public class Select {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Float number1 = 0f;
 		Float number2 = 0f;

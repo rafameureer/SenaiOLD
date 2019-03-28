@@ -3,7 +3,7 @@ import java.util.Random;
 public class Number08 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Random random = new Random();
 		Number bigger = new Number();
 		Number smaller = new Number();

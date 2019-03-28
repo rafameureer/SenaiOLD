@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class ConvertNumbersForNegative {
 	// Implementado o while para validar a quantidade
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantos números você deseja informar: "));
 		while (quantity <= 0) {
 			quantity = Integer.parseInt(JOptionPane.showInputDialog(

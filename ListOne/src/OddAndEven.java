@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class OddAndEven {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int[] numbers = new int[10];
 		int quantityOdd = 0;
 		int quantityEven = 0;

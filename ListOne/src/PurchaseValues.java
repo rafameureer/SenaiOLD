@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 public class PurchaseValues {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		float totalValue = Integer.parseInt(JOptionPane.showInputDialog("Qual foi o valor total da sua compra: "));
 		int plots = Integer.parseInt(JOptionPane.showInputDialog("Em quantas vezes você quer parcelar: "));
 		float plotsValue = totalValue / plots;

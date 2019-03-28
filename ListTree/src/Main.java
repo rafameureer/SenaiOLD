@@ -4,7 +4,8 @@ public class Main {
 	public static void main(String[] args) {
 		// Number02 programList = new Number02();
 		// Select number03 = new Select();
-		PurchaseDiscount number04 = new PurchaseDiscount();
+		// PurchaseDiscount number04 = new PurchaseDiscount();
+		ConvertTemperature number05 = new ConvertTemperature();
 	}
 
 }

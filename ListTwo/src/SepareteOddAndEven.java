@@ -3,7 +3,6 @@ import javax.swing.JOptionPane;
 public class SepareteOddAndEven {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		String evenResult = "";
 		String oddResult = "";

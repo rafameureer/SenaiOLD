@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class Number09 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int quantity;
 		int quantityEquals = 0;
 		String bigger = "";
