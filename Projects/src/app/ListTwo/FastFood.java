@@ -1,8 +1,10 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class FastFood {
 	// Implementado os if para verificar se é necessario pedir quantidade e o while
-	public static void main(String[] args) {
+	public FastFood() {
 		Order order = new Order();
 		System.out.println("Lanches: ");
 		System.out.println("1 - X-Bacon: R$15,00");

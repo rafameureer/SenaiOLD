@@ -1,9 +1,11 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class ConvertNumbersForNegative {
 	// Implementado o while para validar a quantidade
-	public static void main(String[] args) {
-		
+	public ConvertNumbersForNegative() {
+
 		int quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantos números você deseja informar: "));
 		while (quantity <= 0) {
 			quantity = Integer.parseInt(JOptionPane.showInputDialog(

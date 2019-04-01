@@ -1,8 +1,10 @@
+package app.ListOne;
+
 import javax.swing.JOptionPane;
 
 public class ApplesProgram {
 
-	public static void main(String[] args) {
+	public ApplesProgram() {
 
 		int quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantas maçãs foram compradas: "));
 		Double result;

@@ -1,8 +1,10 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class Select {
 
-	public static void main(String[] args) {
+	public Select() {
 
 		Float number1 = 0f;
 		Float number2 = 0f;

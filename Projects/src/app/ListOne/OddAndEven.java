@@ -1,9 +1,11 @@
+package app.ListOne;
+
 import javax.swing.JOptionPane;
 
 public class OddAndEven {
 
-	public static void main(String[] args) {
-		
+	public OddAndEven() {
+
 		int[] numbers = new int[10];
 		int quantityOdd = 0;
 		int quantityEven = 0;
@@ -22,8 +24,9 @@ public class OddAndEven {
 				sumOdd += numbers[i];
 			}
 		}
-		
-		JOptionPane.showMessageDialog(null, "Você digitou " + quantityEven + " números pares e " + quantityOdd + " números ímpares");
+
+		JOptionPane.showMessageDialog(null,
+				"Você digitou " + quantityEven + " números pares e " + quantityOdd + " números ímpares");
 		JOptionPane.showMessageDialog(null, "A soma dos pares é " + sumEven + " e a soma dos ímpares é " + sumOdd);
 
 	}

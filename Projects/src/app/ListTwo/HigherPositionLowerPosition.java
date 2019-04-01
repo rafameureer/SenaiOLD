@@ -1,12 +1,15 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class HigherPositionLowerPosition {
 
-	public static void main(String[] args) {
+	public HigherPositionLowerPosition() {
 		int quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantos números você quer digitar"));
 		while (quantity <= 0) {
-			quantity = Integer.parseInt(JOptionPane.showInputDialog("Você precisa digitar pelo menos 1 numero. Quantos números você quer digitar"));			
-		}//Alterado para while
+			quantity = Integer.parseInt(JOptionPane
+					.showInputDialog("Você precisa digitar pelo menos 1 numero. Quantos números você quer digitar"));
+		} // Alterado para while
 		int[] numbers = new int[quantity];
 		NumberAndPosition higher = new NumberAndPosition();
 		NumberAndPosition lower = new NumberAndPosition();

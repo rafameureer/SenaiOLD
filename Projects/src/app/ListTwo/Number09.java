@@ -1,9 +1,11 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class Number09 {
 
-	public static void main(String[] args) {
-		
+	public Number09() {
+
 		int quantity;
 		int quantityEquals = 0;
 		String bigger = "";

@@ -1,10 +1,12 @@
+package app.ListOne;
+
 import javax.swing.JOptionPane;
 import java.util.Random;
 
 public class TargetShooting {
 
-	public static void main(String[] args) {
-		
+	public TargetShooting() {
+
 		Random random = new Random();
 		int[] numbers = new int[10];
 		for (int i = 0; i < numbers.length; i++) {

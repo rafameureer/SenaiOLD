@@ -1,7 +1,9 @@
+package app.ListOne;
+
 import javax.swing.JOptionPane;
 
 public class FirstSemesterSales {
-	public static void main(String[] args) {
+	public FirstSemesterSales() {
 		float[][] matriz = new float[6][4];
 		float total = 0;
 		float[] totalMonth = new float[6];

@@ -1,9 +1,11 @@
+package app.ListTwo;
+
 import java.util.Random;
 
 public class Number08 {
 
-	public static void main(String[] args) {
-		
+	public Number08() {
+
 		Random random = new Random();
 		Number bigger = new Number();
 		Number smaller = new Number();

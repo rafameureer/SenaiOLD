@@ -1,8 +1,10 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class SepareteOddAndEven {
 
-	public static void main(String[] args) {
+	public SepareteOddAndEven() {
 
 		String evenResult = "";
 		String oddResult = "";
@@ -16,10 +18,10 @@ public class SepareteOddAndEven {
 				oddResult += ", " + String.valueOf(i);
 			}
 		}
-		
+
 		oddResult = oddResult.replaceFirst(", ", "");
 		evenResult = evenResult.replaceFirst(", ", "");
-		
+
 		JOptionPane.showMessageDialog(null, "Pares: " + evenResult);
 		JOptionPane.showMessageDialog(null, "Ímpares: " + oddResult);
 

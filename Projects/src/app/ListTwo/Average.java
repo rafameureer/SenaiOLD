@@ -1,8 +1,10 @@
+package app.ListTwo;
+
 import javax.swing.JOptionPane;
 
 public class Average {
-	//Implementado o while para o studentsQauntity e para o grades
-	public static void main(String[] args) {
+	// Implementado o while para o studentsQauntity e para o grades
+	public Average() {
 		int studentsQuantity = Integer.parseInt(JOptionPane.showInputDialog("Quantos alunos a turma tem ? "));
 		while (studentsQuantity <= 0) {
 			studentsQuantity = Integer.parseInt(JOptionPane

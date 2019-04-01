@@ -1,9 +1,11 @@
+package app.ListOne;
+
 import javax.swing.JOptionPane;
 
 public class Calculator {
 
-	public static void main(String[] args) {
-		
+	public Calculator() {
+
 		int primaryValue = Integer.parseInt(JOptionPane.showInputDialog("Digite o primeiro valor: "));
 		float total = primaryValue;
 		String r = "";
