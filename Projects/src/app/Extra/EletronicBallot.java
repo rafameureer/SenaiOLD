@@ -31,11 +31,17 @@ public class EletronicBallot extends JFrame {
 
     private void vote() {
         Integer vote = 1;
-        try {
-            vote = Integer.parseInt(JOptionPane.showInputDialog("Informe seu voto"));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        Boolean exception = false;
+        do {
+            try {
+                vote = Integer.parseInt(JOptionPane.showInputDialog("Informe seu voto"));
+                exception = false;
+            } catch (Exception e) {
+                System.out.println(e);
+                JOptionPane.showMessageDialog(null, "Você precisa informar um numero");
+                exception = true;
+            }
+        } while (exception);
         this.organizeVote(vote);
     }
 
@@ -61,12 +67,22 @@ public class EletronicBallot extends JFrame {
     }
 
     private void requestIfContinue() {
-        String continueVoting = JOptionPane
-                .showInputDialog("Existe mais alguem para votar ? Responda com 'SIM' ou 'NAO'");
+        String continueVoting = "";
+        do {
+            try {
+                continueVoting = JOptionPane
+                        .showInputDialog("Existe mais alguem para votar ? Responda com 'SIM' ou 'NAO'");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } while (continueVoting.equals(""));
+
         if (continueVoting.equals("SIM") || continueVoting.equals("sim")) {
             this.vote();
-        } else {
+        } else if (continueVoting.equals("NAO") || continueVoting.equals("nao")) {
             this.showResponse();
+        } else {
+            this.requestIfContinue();
         }
     }
 
@@ -75,6 +91,7 @@ public class EletronicBallot extends JFrame {
         System.out.println("Jean: " + this.voteJean);
         System.out.println("Em branco: " + this.blankVote);
         System.out.println("Nulo: " + this.nullVote);
+
         if (this.quantityVotes == 0 || this.nullAndBlankIsWinner()) {
             JOptionPane.showMessageDialog(null, "Eleição cancelada");
         } else if (this.voteDaniel == this.voteJean) {
@@ -84,8 +101,9 @@ public class EletronicBallot extends JFrame {
                     "O candidato Daniel ganhou a eleição com " + this.voteDaniel + " votos");
         } else if (this.voteJean > this.voteDaniel) {
             JOptionPane.showMessageDialog(null, "O candidato Jean ganhou a eleição com " + this.voteJean + " votos");
-
         }
+        
+        System.exit(0);
     }
 
     private boolean nullAndBlankIsWinner() {
