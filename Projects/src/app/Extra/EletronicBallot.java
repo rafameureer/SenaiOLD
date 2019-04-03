@@ -13,12 +13,13 @@ public class EletronicBallot extends JFrame {
     private JTable table;
     private JScrollPane scrollPane;
 
-    private Object[][] data = { { "15", "Daniel" }, { "75", "Jean" }, { "0", "Voto em branco" }, { "1", "Voto nulo" } };
+    private Object[][] data = { { "15", "Daniel" }, { "75", "Jean" }, { "0", "Voto em branco" },
+            { "Outros valores", "Voto nulo" } };
     private String[] columns = { "Código", "Candidato" };
 
     private Integer voteDaniel = 0;
     private Integer voteJean = 0;
-    private Integer invalidVote = 0;
+    private Integer nullVote = 0;
     private Integer blankVote = 0;
     private Integer quantityVotes = 0;
 
@@ -48,13 +49,10 @@ public class EletronicBallot extends JFrame {
             this.voteJean += 1;
             break;
         case 0:
-            this.invalidVote += 1;
-            break;
-        case 1:
             this.blankVote += 1;
             break;
         default:
-            this.blankVote += 1;
+            this.nullVote += 1;
             break;
         }
 
@@ -73,13 +71,25 @@ public class EletronicBallot extends JFrame {
     }
 
     private void showResponse() {
-        if(this.quantityVotes == 0 || this.isInvalidAndBlankWins()){
-            
+        System.out.println("Daniel: " + this.voteDaniel);
+        System.out.println("Jean: " + this.voteJean);
+        System.out.println("Em branco: " + this.blankVote);
+        System.out.println("Nulo: " + this.nullVote);
+        if (this.quantityVotes == 0 || this.nullAndBlankIsWinner()) {
+            JOptionPane.showMessageDialog(null, "Eleição cancelada");
+        } else if (this.voteDaniel == this.voteJean) {
+            JOptionPane.showMessageDialog(null, "Empate");
+        } else if (this.voteDaniel > this.voteJean) {
+            JOptionPane.showMessageDialog(null,
+                    "O candidato Daniel ganhou a eleição com " + this.voteDaniel + " votos");
+        } else if (this.voteJean > this.voteDaniel) {
+            JOptionPane.showMessageDialog(null, "O candidato Jean ganhou a eleição com " + this.voteJean + " votos");
+
         }
     }
 
-    private boolean isInvalidAndBlankWins() {
-        return false;
+    private boolean nullAndBlankIsWinner() {
+        return this.nullVote + this.blankVote > this.voteDaniel || this.nullVote + this.blankVote > this.voteJean;
     }
 
     public void createTable() {
