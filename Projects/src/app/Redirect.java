@@ -2,6 +2,7 @@ package app;
 
 import javax.swing.JOptionPane;
 
+import app.Challenge.Challenge;
 import app.Extra.SelectExerciseExtra;
 import app.ListTree.SelectExerciseTree;
 import app.ListTwo.SelectExerciseTwo;
@@ -24,6 +25,9 @@ public class Redirect {
             break;
         case 4:
             new SelectExerciseExtra(exerciseOption);
+            break;
+        case 5:
+            new Challenge();
             break;
         default:
             JOptionPane.showMessageDialog(null, "A opção selecionada não é valida, digite um numero de 1 a 4");
