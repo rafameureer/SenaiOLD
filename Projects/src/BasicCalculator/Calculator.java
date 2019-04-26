@@ -1,4 +1,4 @@
-package app.POO.BasicCalculator;
+package BasicCalculator;
 
 import javax.swing.JOptionPane;
 
