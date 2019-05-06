@@ -6,6 +6,8 @@ public class SepareteOddAndEven {
 
 	public SepareteOddAndEven() {
 
+		// int[] evenArray = new int[15];
+		// int[] oddArray = new int[15];
 		String evenResult = "";
 		String oddResult = "";
 

@@ -6,17 +6,21 @@ public class Number09 {
 
 	public Number09() {
 
-		int quantity;
+		int quantity = 0;
 		int quantityEquals = 0;
 		String bigger = "";
 		String smaller = "";
 		String equals = "";
-		int x;
+		int x = 0;
 
 		do {
-			quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantas posições o array deve ter ? 0 ou maior"));
-			x = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor de x, 0 ou maior "));
-		} while (quantity <= 0 && x <= 0);
+			try {
+				quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantas posições o array deve ter ? 0 ou maior"));
+				x = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor de x, 0 ou maior "));
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		} while (quantity <= 0 || x <= 0);
 
 		int[] array = new int[quantity];
 		// quantidade
@@ -32,7 +36,7 @@ public class Number09 {
 			}
 		}
 
-		if (bigger != "") {
+		if (!bigger.equals("")) {
 			JOptionPane.showMessageDialog(null, "O(s) numero(s) maior(es) que o valor de x são: " + bigger);
 		}
 		if (smaller != "") {
