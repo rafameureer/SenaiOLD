@@ -36,9 +36,13 @@ public class BiggerAndSmaller {
                         JOptionPane.showInputDialog("O numero precisa ser inteiro e positivo, tente outra vez"));
 
             }
-            this.bigger = num >= this.bigger || position == 1 ? num : this.bigger;
-            this.smaller = num <= this.smaller || position == 1 ? num : this.smaller;
+            this.extracted(position, num);
         }
         return number > 0 ? number : num;
+    }
+
+    private void extracted(Integer position, Integer num) {
+        this.bigger = num >= this.bigger || position == 1 ? num : this.bigger;
+        this.smaller = num <= this.smaller || position == 1 ? num : this.smaller;
     }
 }

@@ -30,6 +30,7 @@ public class PurchaseDiscount {
             JOptionPane.showMessageDialog(null, "O valor da sua compra não tem desconto");
         }
     }
+    // arrumar para um metodo
 
     private void fifteenDiscount() {
         this.value = this.value - (this.value * 0.15f);

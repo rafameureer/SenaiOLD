@@ -30,6 +30,7 @@ public class Number02 {
 	}
 
 	public void mediaPonderada(float[] notas, int[] pesos) {
+		// arrumar
 		float media = 0F;
 		for (int i = 0; i < notas.length; i++) {
 			media += notas[i] * pesos[i];
