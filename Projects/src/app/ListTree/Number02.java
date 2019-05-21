@@ -30,12 +30,13 @@ public class Number02 {
 	}
 
 	public void mediaPonderada(float[] notas, int[] pesos) {
-		// arrumar
+		int smPesos = 0;
 		float media = 0F;
 		for (int i = 0; i < notas.length; i++) {
 			media += notas[i] * pesos[i];
+			smPesos += pesos[i];
 		}
-		media /= 3;
+		media /= smPesos;
 		this.createResponse(media);
 	}
 

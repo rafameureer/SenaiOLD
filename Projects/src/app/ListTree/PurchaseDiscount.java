@@ -14,11 +14,11 @@ public class PurchaseDiscount {
         if (this.value <= 100) {
             this.responseValuePurchase(0);
         } else if (this.value > 100 && this.value <= 200) {
-            this.fiveDiscount();
+            this.calcValue(5);
         } else if (this.value > 200 && this.value <= 500) {
-            this.tenDiscount();
+            this.calcValue(10);
         } else {
-            this.fifteenDiscount();
+            this.calcValue(15);
         }
     }
 
@@ -30,21 +30,11 @@ public class PurchaseDiscount {
             JOptionPane.showMessageDialog(null, "O valor da sua compra não tem desconto");
         }
     }
-    // arrumar para um metodo
 
-    private void fifteenDiscount() {
-        this.value = this.value - (this.value * 0.15f);
-        this.responseValuePurchase(15);
-    }
-
-    private void tenDiscount() {
-        this.value = this.value - (this.value * 0.1f);
-        this.responseValuePurchase(10);
-    }
-
-    private void fiveDiscount() {
-        this.value = this.value - (this.value * 0.05f);
-        this.responseValuePurchase(5);
+    private void calcValue(Integer discount) {
+        Float d = Float.valueOf(discount);
+        this.value = this.value - (this.value * (d / 100));
+        this.responseValuePurchase(discount);
     }
 
     private Float requestValue() {
