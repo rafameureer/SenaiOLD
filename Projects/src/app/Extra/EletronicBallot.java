@@ -102,12 +102,12 @@ public class EletronicBallot extends JFrame {
         } else if (this.voteJean > this.voteDaniel) {
             JOptionPane.showMessageDialog(null, "O candidato Jean ganhou a eleição com " + this.voteJean + " votos");
         }
-        
+
         System.exit(0);
     }
 
     private boolean nullAndBlankIsWinner() {
-        return this.nullVote + this.blankVote > this.voteDaniel || this.nullVote + this.blankVote > this.voteJean;
+        return this.nullVote + this.blankVote > this.voteDaniel + this.voteJean;
     }
 
     public void createTable() {

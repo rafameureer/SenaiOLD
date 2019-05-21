@@ -18,7 +18,6 @@ public class SelectExerciseExtra {
             new SelectLineInMatrix();
             break;
         case 5:
-            // arrumar - 2 daniel - 1 jean - 1 0  - 1 qualquer
             new EletronicBallot();
             break;
         default:
