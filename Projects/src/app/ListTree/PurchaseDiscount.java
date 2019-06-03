@@ -23,7 +23,9 @@ public class PurchaseDiscount {
     }
 
     private void responseValuePurchase(Integer discount) {
+        //(int)variable
         if (discount > 0) {
+            //método para formatar
             JOptionPane.showMessageDialog(null,
                     "O valor total da compra com o desconto de " + discount + "% é R$" + this.value + "0");
         } else {

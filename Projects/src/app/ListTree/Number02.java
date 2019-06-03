@@ -3,57 +3,95 @@ package app.ListTree;
 import javax.swing.JOptionPane;
 
 public class Number02 {
+	float[] notes = new float[3];
+	int[] weight = new int[3];
 
 	public Number02() {
-		float[] notas = new float[3];
-		int[] pesos = new int[3];
 
-		String qualMedia = JOptionPane.showInputDialog("Digite A para aritmética ou P para ponderada.");
+		String averageType = JOptionPane.showInputDialog("Digite A para aritmética ou P para ponderada.");
 
-		while (!qualMedia.equals("A") && !qualMedia.equals("P")) {
-			qualMedia = JOptionPane.showInputDialog(
+		averageType = this.requestAverageType(averageType);
+
+		this.requestNotesAndWeight(averageType);
+
+		if (averageType.equals("A")) {
+			this.arithmeticAverage(this.notes);
+		} else {
+			this.weightedAverage(this.notes, this.weight);
+		}
+	}
+
+	private String requestAverageType(String averageType) {
+		while (!averageType.equals("A") && !averageType.equals("P")) {
+			averageType = JOptionPane.showInputDialog(
 					"Você precisa escolher uma opção para seguir em frente. Digite A para aritmética ou P para ponderada.");
 		}
+		return averageType;
+	}
 
-		for (int i = 0; i < notas.length; i++) {
-			notas[i] = Float.parseFloat(JOptionPane.showInputDialog("nota"));
-			if (qualMedia.equals("P")) {
-				pesos[i] = Integer.parseInt(JOptionPane.showInputDialog("Qual o peso dessa nota"));
+	private void requestNotesAndWeight(String averageType) {
+		int sumWeight = 0;
+
+		for (int i = 0; i < this.notes.length; i++) {
+			this.requestNotes(i);
+			if (averageType.equals("P")) {
+				this.requestWeight(i);
+				sumWeight += this.weight[i];
+			}
+			while (this.notes[i] > 10 || this.notes[i] < 0) {
+				this.requestNotes(i);
 			}
 		}
 
-		if (qualMedia.equals("A")) {
-			this.mediaAritmetica(notas);
-		} else {
-			this.mediaPonderada(notas, pesos);
+		this.verifyWeight(averageType, sumWeight);
+	}
+
+	private void verifyWeight(String averageType, int sumWeight) {
+		if (averageType.equals("P") && sumWeight != 10) {
+			for (int i = 0; i < this.weight.length; i++) {
+				this.requestWeight(i);
+			}
 		}
 	}
 
-	public void mediaPonderada(float[] notas, int[] pesos) {
+	private void requestWeight(int i) {
+		this.weight[i] = Integer.parseInt(JOptionPane.showInputDialog("Qual o peso dessa nota"));
+	}
+
+	private void requestNotes(int i) {
+		try {
+			this.notes[i] = Float.parseFloat(JOptionPane
+					.showInputDialog("Digite a " + (i + 1) + "° nota, lembrando que ela precisa estar entre 0 e 10"));
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	private void weightedAverage(float[] notes, int[] weight) {
 		int smPesos = 0;
-		float media = 0F;
-		for (int i = 0; i < notas.length; i++) {
-			media += notas[i] * pesos[i];
-			smPesos += pesos[i];
+		float average = 0F;
+		for (int i = 0; i < notes.length; i++) {
+			average += notes[i] * weight[i];
+			smPesos += weight[i];
 		}
-		media /= smPesos;
-		this.createResponse(media);
+		average /= smPesos;
+		this.createResponse(average);
 	}
 
-	public void mediaAritmetica(float[] notas) {
-		float media = 0F;
-		for (int i = 0; i < notas.length; i++) {
-			media += notas[i];
+	private void arithmeticAverage(float[] notes) {
+		float average = 0F;
+		for (int i = 0; i < notes.length; i++) {
+			average += notes[i];
 		}
-		media = media / 3;
-		this.createResponse(media);
+		average = average / 3;
+		this.createResponse(average);
 	}
 
-	public void createResponse(float media) {
-		if (media >= 7) {
-			JOptionPane.showMessageDialog(null, "O aluno esta aprovado com a média " + media);
+	private void createResponse(float average) {
+		if (average >= 7) {
+			JOptionPane.showMessageDialog(null, "O aluno esta aprovado com a média " + average);
 		} else {
-			JOptionPane.showMessageDialog(null, "O aluno esta reprovado com a média " + media);
+			JOptionPane.showMessageDialog(null, "O aluno esta reprovado com a média " + average);
 		}
 	}
 

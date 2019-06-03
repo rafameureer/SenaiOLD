@@ -3,8 +3,8 @@ package app.ListTree;
 import javax.swing.JOptionPane;
 
 public class Select {
-	private Float number01 = 0f;
-	private Float number02 = 0f;
+	private Integer number01 = 0;
+	private Integer number02 = 0;
 
 	public Select() {
 		requestNumbers();
@@ -16,8 +16,8 @@ public class Select {
 		boolean isException;
 		do {
 			try {
-				this.number01 = Float.parseFloat(JOptionPane.showInputDialog("Digite o 1° número"));
-				this.number02 = Float.parseFloat(JOptionPane.showInputDialog("Digite o 2° número"));
+				this.number01 = Integer.parseInt(JOptionPane.showInputDialog("Digite o 1° número"));
+				this.number02 = Integer.parseInt(JOptionPane.showInputDialog("Digite o 2° número"));
 				isException = false;
 			} catch (Exception e) {
 				System.out.println(e);
@@ -27,6 +27,7 @@ public class Select {
 	}
 
 	private void showOptions() {
+		// mesmo lugar da pergunta
 		System.out.println("O que você quer fazer com esses números?");
 		System.out.println("a - Verificar se os números são múltiplos de 3");
 		System.out.println("b - Verificar se os dois números lidos são pares");
@@ -52,6 +53,7 @@ public class Select {
 				break;
 			case "d":
 				exit = true;
+				this.exit();
 				break;
 			default:
 				System.out.print("Valor não encontrado");
@@ -60,7 +62,11 @@ public class Select {
 		} while (exit == false);
 	}
 
-	private void average(Float number1, Float number2) {
+	private void exit() {
+		System.exit(0);
+	}
+
+	private void average(Integer number1, Integer number2) {
 		if ((number1 + number2) / 2 > 7) {
 			JOptionPane.showMessageDialog(null, "A média é maior ou igual a 7");
 		} else {
@@ -68,7 +74,7 @@ public class Select {
 		}
 	}
 
-	private void isEven(Float number1, Float number2) {
+	private void isEven(Integer number1, Integer number2) {
 		if (number1 % 2 == 0) {
 			JOptionPane.showMessageDialog(null, "O primeiro numero é par");
 		} else {
@@ -82,7 +88,8 @@ public class Select {
 		}
 	}
 
-	private void multipleOfTree(Float number1, Float number2) {
+	private void multipleOfTree(Integer number1, Integer number2) {
+		// Float[] exemplo = { number1, number2 };
 		if (number1 % 3 == 0) {
 			JOptionPane.showMessageDialog(null, "O primeiro numero é multiplo de 3");
 		} else {
