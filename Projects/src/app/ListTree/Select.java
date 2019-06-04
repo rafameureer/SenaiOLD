@@ -40,7 +40,7 @@ public class Select {
 		boolean exit = false;
 		do {
 			option = JOptionPane.showInputDialog("Informe a letra da alternativa que deseja executar");
-
+			System.out.print(option);
 			switch (option) {
 			case "a":
 				multipleOfTree(number01, number02);

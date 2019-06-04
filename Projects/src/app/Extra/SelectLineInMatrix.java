@@ -35,7 +35,8 @@ public class SelectLineInMatrix {
         }
 
         for (int column = 0; column < matrix[selectedLine].length; column++) {
-            System.out.print(matrix[selectedLine][column] + "|");
+            // mostrar a matriz inteira
+            JOptionPane.showMessageDialog(null, matrix[selectedLine][column] + "|");
         }
     }
 }

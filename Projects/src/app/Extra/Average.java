@@ -4,8 +4,8 @@ import javax.swing.JOptionPane;
 
 public class Average {
     public Average() {
-        Float average = calcAverage();
-        response(average);
+        Float average = this.calcAverage();
+        this.response(average);
 
     }
 
@@ -30,15 +30,15 @@ public class Average {
 
     private void response(Float average) {
         if (average >= 9f) {
-            JOptionPane.showMessageDialog(null, "O conceito do aluno é A");
+            JOptionPane.showMessageDialog(null, "O conceito do aluno é A com a média " + average);
         } else if (average >= 8f) {
-            JOptionPane.showMessageDialog(null, "O conceito do aluno é B");
+            JOptionPane.showMessageDialog(null, "O conceito do aluno é B com a média " + average);
 
         } else if (average >= 7f) {
-            JOptionPane.showMessageDialog(null, "O conceito do aluno é C");
+            JOptionPane.showMessageDialog(null, "O conceito do aluno é C com a média " + average);
 
         } else if (average < 7f) {
-            JOptionPane.showMessageDialog(null, "O conceito do aluno é D");
+            JOptionPane.showMessageDialog(null, "O conceito do aluno é D com a média " + average);
 
         } else {
             JOptionPane.showMessageDialog(null, "Houve um problema ao calcular a média tente novamente");
