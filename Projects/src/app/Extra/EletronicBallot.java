@@ -32,6 +32,7 @@ public class EletronicBallot extends JFrame {
     private void vote() {
         Integer vote = 1;
         Boolean exception = false;
+        //Verificar se existe votante
         do {
             try {
                 vote = Integer.parseInt(JOptionPane.showInputDialog("Informe seu voto"));
@@ -77,9 +78,9 @@ public class EletronicBallot extends JFrame {
             }
         } while (continueVoting.equals(""));
 
-        if (continueVoting.equals("SIM") || continueVoting.equals("sim")) {
+        if (continueVoting.equalsIgnoreCase("SIM")) {
             this.vote();
-        } else if (continueVoting.equals("NAO") || continueVoting.equals("nao")) {
+        } else if (continueVoting.equalsIgnoreCase("NAO")) {
             this.showResponse();
         } else {
             this.requestIfContinue();
