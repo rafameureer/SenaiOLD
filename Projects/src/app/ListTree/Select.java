@@ -8,7 +8,6 @@ public class Select {
 
 	public Select() {
 		requestNumbers();
-		showOptions();
 		selectOption();
 	}
 
@@ -26,20 +25,12 @@ public class Select {
 		} while (isException == true);
 	}
 
-	private void showOptions() {
-		// mesmo lugar da pergunta
-		System.out.println("O que você quer fazer com esses números?");
-		System.out.println("a - Verificar se os números são múltiplos de 3");
-		System.out.println("b - Verificar se os dois números lidos são pares");
-		System.out.println("c - Verificar se a média dos dois números é maior ou igual a 7");
-		System.out.println("d - Sair");
-	}
-
 	private void selectOption() {
 		String option;
 		boolean exit = false;
 		do {
-			option = JOptionPane.showInputDialog("Informe a letra da alternativa que deseja executar");
+			option = JOptionPane.showInputDialog(
+					"O que você quer fazer com esses números? \n a - Verificar se os números são múltiplos de 3 \n b - Verificar se os dois números lidos são pares \n c - Verificar se a média dos dois números é maior ou igual a 7 \n d - Sair \n Informe a letra da alternativa que deseja executar");
 			System.out.print(option);
 			switch (option) {
 			case "a":
