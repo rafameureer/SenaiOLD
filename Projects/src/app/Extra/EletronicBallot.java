@@ -26,7 +26,7 @@ public class EletronicBallot extends JFrame {
     public EletronicBallot() {
         super("Contatos");
         this.createTable();
-        this.vote();
+        this.requestIfContinue();
     }
 
     private void vote() {
@@ -72,7 +72,7 @@ public class EletronicBallot extends JFrame {
         do {
             try {
                 continueVoting = JOptionPane
-                        .showInputDialog("Existe mais alguem para votar ? Responda com 'SIM' ou 'NAO'");
+                        .showInputDialog("Existe alguem para votar ? Responda com 'SIM' ou 'NAO'");
             } catch (Exception e) {
                 System.out.println(e);
             }
