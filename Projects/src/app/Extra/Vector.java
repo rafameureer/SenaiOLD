@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 public class Vector {
     public Vector() {
-        // não parar o programa
         Integer vectorLength = setVectorLength();
 
         float[] numbers = setVector(vectorLength);
@@ -13,7 +12,6 @@ public class Vector {
 
         if (numbers[0] < sumLastPositions) {
             this.firstIsSmall(numbers, sumLastPositions);
-        // } else if (numbers[0].compareTo(sumLastPositions) == 0) {
         } else if (numbers[0] == sumLastPositions) {
             JOptionPane.showMessageDialog(null,
                     "O primeiro numero " + numbers[0] + " é igual a soma dos dois ultimos que é " + sumLastPositions);

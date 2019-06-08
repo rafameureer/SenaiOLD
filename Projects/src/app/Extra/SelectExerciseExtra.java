@@ -9,7 +9,6 @@ public class SelectExerciseExtra {
             new BiggerAndSmaller();
             break;
         case 2:
-            // correções
             new Vector();
             break;
         case 3:

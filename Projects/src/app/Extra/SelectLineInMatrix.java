@@ -34,9 +34,23 @@ public class SelectLineInMatrix {
             }
         }
 
+        String matrixFormat = this.buildMatrix(matrix);
+        String matrixLineSelected = "";
         for (int column = 0; column < matrix[selectedLine].length; column++) {
-            // mostrar a matriz inteira
-            JOptionPane.showMessageDialog(null, matrix[selectedLine][column] + "|");
+            matrixLineSelected += matrix[selectedLine][column] + " |";
         }
+        JOptionPane.showMessageDialog(null, matrixFormat + "\n" + matrixLineSelected);
     }
+
+    private String buildMatrix(Integer[][] matrix) {
+        String matrixComplete = "";
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrixComplete += matrix[i][j].toString() + " |";
+            }
+            matrixComplete += "\n-----------\n";
+        }
+        return matrixComplete;
+    }
+
 }
