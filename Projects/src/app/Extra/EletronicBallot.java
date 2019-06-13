@@ -32,7 +32,6 @@ public class EletronicBallot extends JFrame {
     private void vote() {
         Integer vote = 1;
         Boolean exception = false;
-        //Verificar se existe votante
         do {
             try {
                 vote = Integer.parseInt(JOptionPane.showInputDialog("Informe seu voto"));
