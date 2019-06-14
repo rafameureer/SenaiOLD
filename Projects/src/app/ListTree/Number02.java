@@ -53,9 +53,9 @@ public class Number02 {
 			this.requestWeight(i, sumWeightOriginal);
 		} else if (sumWeight < 10 && i == 2) {
 			this.requestWeight(i, sumWeightOriginal);
-		} else if (sumWeight > 8 && i == 0) {
+		} else if (sumWeight >= 8 && i == 0) {
 			this.requestWeight(i, sumWeightOriginal);
-		} else if (sumWeight > 9 && i == 1) {
+		} else if (sumWeight >= 9 && i == 1) {
 			this.requestWeight(i, sumWeightOriginal);
 		}
 	}

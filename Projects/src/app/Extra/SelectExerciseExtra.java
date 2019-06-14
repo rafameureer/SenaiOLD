@@ -15,11 +15,9 @@ public class SelectExerciseExtra {
             new Average();
             break;
         case 4:
-            // correções
             new SelectLineInMatrix();
             break;
         case 5:
-            // correções
             new EletronicBallot();
             break;
         default:

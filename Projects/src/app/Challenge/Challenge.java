@@ -3,6 +3,7 @@ package app.Challenge;
 import javax.swing.JOptionPane;
 
 public class Challenge {
+    // colocar os numeros
     private String[][] gameBoard = new String[3][3];
     private boolean winnerIsDefine = false;
     private Integer winner = 0;
@@ -20,10 +21,12 @@ public class Challenge {
                 this.move++;
                 if (this.move <= 9) {
                     this.playerMove(i);
-                    this.checkIfWinnerDefine();
-                    if (this.winnerIsDefine) {
-                        this.winner = i + 1;
-                        break;
+                    if (this.move >= 5) {
+                        this.checkIfWinnerDefine();
+                        if (this.winnerIsDefine) {
+                            this.winner = i + 1;
+                            break;
+                        }
                     }
                 }
             }
