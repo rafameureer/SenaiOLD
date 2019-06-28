@@ -1,4 +1,8 @@
-public class Comunicadora{
+package BasicCalculatorOov5;
+
+import BasicCalculatorOov1.EntryExit;
+
+public class Comunicadora {
     public void executar() {
         while (true) {
 
@@ -6,10 +10,10 @@ public class Comunicadora{
             int numero2 = EntryExit.infonum2();
             int acao = EntryExit.infop();
 
-            Controladora controle = new COntroladora();
+            Controladora controle = new Controladora();
 
             String msg = controle.calcular(numero1, numero2, acao);
-            
+
             EntryExit.showResult(msg);
 
         }
