@@ -14,14 +14,14 @@ public class Calculator {
             int numero2 = EntryExit.infonum2();
             int acao = EntryExit.infop();
 
-            String msg = calcular(numero1, numero2, acao);
+            String msg = calc(numero1, numero2, acao);
             EntryExit.showResult(msg);
 
         }
 
     }
 
-    private static String calcular(int numero1, int numero2, int operacao) {
+    private static String calc(int numero1, int numero2, int operacao) {
 
         String mens = "";
 
