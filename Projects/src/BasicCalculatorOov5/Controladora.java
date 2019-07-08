@@ -9,7 +9,7 @@ import BasicCalculatorOov4.Sum;
 
 public class Controladora {
 
-	public String calcular(int numero1, int numero2, int operacao) {
+	public String calculate(int numero1, int numero2, int operacao) {
 
 		String mens = "";
 		switch (operacao) {

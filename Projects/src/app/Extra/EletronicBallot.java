@@ -9,6 +9,7 @@ import javax.swing.JTable;
 
 public class EletronicBallot extends JFrame {
 
+    private static final long serialVersionUID = 1L;
     private JPanel panel;
     private JTable table;
     private JScrollPane scrollPane;

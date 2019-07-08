@@ -1,8 +1,5 @@
-package BasicCalculatorOov6;
+package BasicCalculatorOov7;
 
-/**
- * Multiplication
- */
 public class Multiplication extends Operation {
 
     public Multiplication() {

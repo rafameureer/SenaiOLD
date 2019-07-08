@@ -3,16 +3,16 @@ package BasicCalculatorOov5;
 import BasicCalculatorOov1.EntryExit;
 
 public class Comunicadora {
-    public void executar() {
+    public void execute() {
         while (true) {
 
-            int numero1 = EntryExit.infonum1();
-            int numero2 = EntryExit.infonum2();
+            int number1 = EntryExit.infonum1();
+            int number2 = EntryExit.infonum2();
             int acao = EntryExit.infop();
 
-            Controladora controle = new Controladora();
+            Controladora control = new Controladora();
 
-            String msg = controle.calcular(numero1, numero2, acao);
+            String msg = control.calculate(number1, number2, acao);
 
             EntryExit.showResult(msg);
 
