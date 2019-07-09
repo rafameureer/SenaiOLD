@@ -1,14 +1,14 @@
-package principal;
+package progprincipal;
 
 import interfacegrafica.MenuOpcoes;
 
 /**
- * Main
+ * Principal
  */
 public class Principal {
 
     public static void main(String[] args) {
-        MenuOpcoes interfaceGrafica = new MenuOpcoes();
-        interfaceGrafica.exibirMenu();
+        MenuOpcoes menu = new MenuOpcoes();
+        menu.exibirMenu();
     }
 }

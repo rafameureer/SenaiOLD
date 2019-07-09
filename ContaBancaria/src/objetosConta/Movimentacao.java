@@ -6,7 +6,6 @@ import java.util.Date;
  * Movimentacao
  */
 public class Movimentacao {
-
     private int tipo;
     private float valor;
     private Date data;

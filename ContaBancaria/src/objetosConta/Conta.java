@@ -1,5 +1,7 @@
 package objetosConta;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,7 +12,7 @@ public class Conta {
     private String titularDaConta;
     private int tipo;
     private float saldo;
-    private List<Movimentacao> listaDeMovimentacao;
+    private List<Movimentacao> listaDeMovimentacao = new ArrayList<Movimentacao>();
 
     /**
      * @return the listaDeMovimentacao
@@ -68,28 +70,79 @@ public class Conta {
         this.titularDaConta = titularDaConta;
     }
 
-    public void depositar() {
-
+    public String depositar(float valor) {
+        Movimentacao movimentacao = new Movimentacao();
+        movimentacao.setData(new Date());
+        movimentacao.setTipo(2);
+        movimentacao.setValor(valor);
+        this.listaDeMovimentacao.add(movimentacao);
+        this.saldo += valor;
+        return "Valor R$" + valor + " depositado\n" + "Seu saldo atual é R$" + this.saldo;
     }
 
-    public void sacar() {
-
+    public String sacar(float valor) {
+        String message = "";
+        if (this.saldo > -1000 && this.saldo - valor >= -1000) {
+            Movimentacao movimentacao = new Movimentacao();
+            movimentacao.setData(new Date());
+            movimentacao.setTipo(1);
+            movimentacao.setValor(valor);
+            this.listaDeMovimentacao.add(movimentacao);
+            this.saldo -= valor;
+            message = "Valor R$" + valor + " sacado\n" + "Seu saldo atual é R$" + this.saldo;
+        } else {
+            message = "Seu saldo não permite que você faça mais saques, seu saldo atual é: " + this.saldo;
+        }
+        return message;
     }
 
     public void consultarSaldo() {
-
+        // sem sentido visto que não é preciso fazer nenhuma verificação pode ser
+        // utilizado o proprio get do atributo
     }
 
-    public void gerarExtrato() {
-
+    public String gerarExtrato() {
+        String extrato = "";
+        int posicaoDeposito = 1;
+        int posicaoSaque = 1;
+        for (Movimentacao movimentacao : this.listaDeMovimentacao) {
+            if (movimentacao.getTipo() == 1) {
+                extrato += "Saque " + posicaoSaque + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
+                        + movimentacao.getValor() + "\n";
+                posicaoSaque++;
+            } else {
+                extrato += "Deposito " + posicaoDeposito + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
+                        + movimentacao.getValor() + "\n";
+                posicaoDeposito++;
+            }
+        }
+        return extrato;
     }
 
-    public void gerarExtratoDeposito() {
-
+    public String gerarExtratoDeposito() {
+        String extrato = "";
+        int position = 1;
+        for (Movimentacao movimentacao : this.listaDeMovimentacao) {
+            if (movimentacao.getTipo() == 2) {
+                extrato += "Deposito " + position + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
+                        + movimentacao.getValor() + "\n";
+                position++;
+            }
+        }
+        return extrato;
     }
 
-    public void gerarExtratoSaques() {
-
+    public String gerarExtratoSaques() {
+        String extrato = "";
+        int position = 1;
+        for (Movimentacao movimentacao : this.listaDeMovimentacao) {
+            if (movimentacao.getTipo() == 1) {
+                extrato += "Saque " + position + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
+                        + movimentacao.getValor() + "\n";
+                position++;
+            }
+        }
+        return extrato;
     }
 
     public void iniciarConta(String titular, int tipo) {
