@@ -2,7 +2,6 @@ package progprincipal;
 
 import javax.swing.JOptionPane;
 
-import classesobjetoscarro.Carro;
 import classesobjetoscarro.Fabrica;
 
 /**
@@ -18,8 +17,7 @@ public class Principal {
             switch (acao) {
             case 1:
                 String modelo = JOptionPane.showInputDialog("Qual o modelo do carro");
-                String cor = JOptionPane.showInputDialog("Qual a cor do carro");
-                fabrica.venderCarro(modelo, cor);
+                fabrica.venderCarro(modelo, null);
                 break;
             case 2:
                 int quantidadeCarros = Integer
@@ -33,6 +31,7 @@ public class Principal {
                 System.exit(1);
                 break;
             default:
+                JOptionPane.showMessageDialog(null, "Você informou uma opção invalida");
                 break;
             }
         }
