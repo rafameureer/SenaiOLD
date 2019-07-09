@@ -57,8 +57,10 @@ public class MenuOptions {
                     Coupon coupon = new Coupon();
                     coupon.setProduct(selectedProduct.getName());
                     coupon.setValor(selectedProduct.getPrice() * quantity);
+                    coupon.setQuantity(quantity);
                     this.coupons.add(coupon);
                     selectedProduct.removeQuantity(quantity);
+                    JOptionPane.showMessageDialog(null, "Produto vendido");
                 } else {
                     JOptionPane.showMessageDialog(null, "Você digitou uma quantidade que não temos em estoque");
                 }
@@ -74,9 +76,9 @@ public class MenuOptions {
         Product selectedProduct = null;
         String idOrName = JOptionPane.showInputDialog("Informe o nome ou o código do produto");
         for (Product product : this.stock.getProducts()) {
-            if (product.getId() == idOrName) {
+            if (product.getId().equals(idOrName)) {
                 selectedProduct = product;
-            } else if (product.getName() == idOrName) {
+            } else if (product.getName().equalsIgnoreCase(idOrName)) {
                 selectedProduct = product;
             }
         }
@@ -85,21 +87,45 @@ public class MenuOptions {
 
     private void addProducts() {
         Product product = this.requestProduct();
-        int quantity = Integer.parseInt(JOptionPane.showInputDialog("Quantos produtos quer adicionar ao estoque ?"));
-        int samePrice = Integer.parseInt(JOptionPane.showInputDialog("O preo atual do produto é " + product.getPrice()
-                + " deseja manter o mesmo preço ? 1 - sim e 2 - não"));
-        if (samePrice == 2) {
-            float price = Float.parseFloat(JOptionPane.showInputDialog("Qual o novo preço do produto"));
-            product.setPrice(price);
+        if (product != null) {
+            int quantity = Integer
+                    .parseInt(JOptionPane.showInputDialog("Quantos produtos quer adicionar ao estoque ?"));
+            int samePrice = Integer.parseInt(JOptionPane.showInputDialog("O preo atual do produto é "
+                    + product.getPrice() + " deseja manter o mesmo preço ? 1 - sim e 2 - não"));
+            if (samePrice == 2) {
+                float price = Float.parseFloat(JOptionPane.showInputDialog("Qual o novo preço do produto"));
+                product.setPrice(price);
+            }
+            product.addQuantity(quantity);
+            JOptionPane.showMessageDialog(null, "Produto adicionado");
         }
-        product.addQuantity(quantity);
-        JOptionPane.showMessageDialog(null, "Produto adicionado");
     }
 
     private void calculateCoupons() {
+        if (this.coupons.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Não existem cupons cadastrados");
+        } else {
+            float value = 0f;
+            for (Coupon coupon : this.coupons) {
+                value += coupon.getValor();
+            }
+            JOptionPane.showMessageDialog(null, "O valor total de cupons é: " + value);
+        }
     }
 
     private void showCoupons() {
+        if (this.coupons.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Não existem cupons cadastrados");
+        } else {
+            String message = "";
+            int count = 1;
+            for (Coupon coupon : this.coupons) {
+                message += "Cupom: " + count + "\n" + "Produto: " + coupon.getProduct() + " quantidade: "
+                        + coupon.getQuantity() + " valor: " + coupon.getValor() + "\n";
+                count++;
+            }
+            JOptionPane.showMessageDialog(null, message);
+        }
     }
 
     private void showProducts() {

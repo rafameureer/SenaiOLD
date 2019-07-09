@@ -6,6 +6,7 @@ package objects;
 public class Coupon {
     private float valor;
     private String product;
+    private int quantity;
 
     /**
      * @return the product
@@ -33,5 +34,19 @@ public class Coupon {
      */
     public void setValor(float valor) {
         this.valor = valor;
+    }
+
+    /**
+     * @return the quantity
+     */
+    public int getQuantity() {
+        return quantity;
+    }
+
+    /**
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
