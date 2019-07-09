@@ -56,14 +56,10 @@ public class Casa {
     }
 
     public void movimentarPorta(int index, int status) {
-        Porta porta = listaDePortas.get(index);
-        porta.setStatus(status);
-        listaDePortas.set(index, porta);
+        listaDePortas.get(index).setStatus(status);
     }
 
     public void movimentarJanela(int index, int status) {
-        Janela janela = listaDeJanelas.get(index);
-        janela.setStatus(status);
-        listaDeJanelas.set(index, janela);
+        listaDeJanelas.get(index).setStatus(status);
     }
 }

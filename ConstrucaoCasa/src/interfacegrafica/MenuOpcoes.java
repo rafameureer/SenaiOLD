@@ -17,13 +17,8 @@ public class MenuOpcoes {
 
         while (true) {
             int acao = Integer.parseInt(JOptionPane.showInputDialog(
-                    "Escolha uma opção: \n"
-                    + "1 - Construir casa\n"
-                    + "2 - Pintar a casa\n"
-                    + "3 - Mover Porta(s)\n"
-                    + "4 - Mover Janela(s)\n"
-                    + "5 - Informações da casa\n"
-                    + "6 - Sair"));
+                    "Escolha uma opção: \n" + "1 - Construir casa\n" + "2 - Pintar a casa\n" + "3 - Mover Porta(s)\n"
+                            + "4 - Mover Janela(s)\n" + "5 - Informações da casa\n" + "6 - Sair"));
 
             switch (acao) {
             case 1:
@@ -46,7 +41,6 @@ public class MenuOpcoes {
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "Opção inexistente", "Erro", JOptionPane.INFORMATION_MESSAGE);
-                ;
                 break;
             }
         }
@@ -150,8 +144,8 @@ public class MenuOpcoes {
         int portas = Integer.parseInt(JOptionPane.showInputDialog("Informe quantas portas: "));
         int janelas = Integer.parseInt(JOptionPane.showInputDialog("Informe quantas janelas: "));
 
-        List<Janela> listaDeJanelas = new ArrayList();
-        List<Porta> listaDePortas = new ArrayList();
+        List<Janela> listaDeJanelas = new ArrayList<Janela>();
+        List<Porta> listaDePortas = new ArrayList<Porta>();
 
         for (int i = 0; i < janelas; i++) {
             listaDeJanelas.add(solicitarJanelas(i));
@@ -161,25 +155,7 @@ public class MenuOpcoes {
             listaDePortas.add(solicitarPortas(i));
         }
 
-        // casa.setDescricao(descricao);
-        // casa.setCor(cor);
-        // casa.setListaDeJanelas(listaDeJanelas);
-        // casa.setListaDePortas(listaDePortas);
-
         casa.construirCasa(descricao, cor, listaDeJanelas, listaDePortas);
-
-        System.out.println(casa.getDescricao());
-        System.out.println(casa.getCor());
-
-        for (Janela janela : casa.getListaDeJanelas()) {
-            System.out.println("Descrição: " + janela.getIdentificacao());
-            System.out.println("Situação: " + janela.getStatus());
-        }
-
-        for (Porta porta : casa.getListaDePortas()) {
-            System.out.println("Descrição: " + porta.getIdentificacao());
-            System.out.println("Situação: " + porta.getStatus());
-        }
     }
 
     private Porta solicitarPortas(int i) {
@@ -189,8 +165,12 @@ public class MenuOpcoes {
         int status = Integer.parseInt(JOptionPane
                 .showInputDialog("Digite o status da porta " + identificacao + "\n 1 Para aberta \n 2 Para fechada:"));
         porta.setIdentificacao(identificacao);
-        porta.setStatus(status);
-
+        
+        if (status == 1) {
+            porta.setStatus(1);
+        } else {
+            porta.setStatus(2);
+        }
         System.out.print("Porta: " + i + " Descrição: " + identificacao + " Status: " + status);
 
         return porta;
@@ -204,10 +184,13 @@ public class MenuOpcoes {
                 .showInputDialog("Digite o status da janela " + identificacao + "\n 1 Para aberta \n 2 Para fechada:"));
 
         janela.setIdentificacao(identificacao);
-        janela.setStatus(status);
 
-        // System.out.print("Janela: " + i + " Descrição:" + identificacao + " Status: "
-        // + status);
+        if (status == 1) {
+            janela.setStatus(1);
+        } else {
+
+            janela.setStatus(2);
+        }
 
         return janela;
     }
