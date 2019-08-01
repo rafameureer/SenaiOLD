@@ -9,7 +9,7 @@ import objects.Coupon;
 import objects.Product;
 import objects.Stock;
 
-public class MenuOptions {
+public class OptionMenu {
     Stock stock = new Stock();
     List<Coupon> coupons = new ArrayList<Coupon>();
 

@@ -1,6 +1,6 @@
 package progprincipal;
 
-import interfacegrafica.MenuOptions;
+import interfacegrafica.OptionMenu;
 
 /**
  * Principal
@@ -8,7 +8,7 @@ import interfacegrafica.MenuOptions;
 public class Principal {
 
     public static void main(String[] args) {
-        MenuOptions menu = new MenuOptions();
+        OptionMenu menu = new OptionMenu();
         menu.showMenu();
     }
 }
