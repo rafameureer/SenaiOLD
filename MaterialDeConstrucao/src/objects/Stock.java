@@ -24,11 +24,11 @@ public class Stock {
         this.products = products;
     }
 
-    public void addProduct(Product produto) {
-        this.products.add(produto);
+    public void addProduct(Product product) {
+        this.products.add(product);
     }
 
-    public void removeProduct(Product produto) {
-        this.products.remove(produto);
+    public void removeProduct(Product product) {
+        this.products.remove(product);
     }
 }

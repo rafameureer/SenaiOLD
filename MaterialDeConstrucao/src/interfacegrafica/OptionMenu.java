@@ -10,8 +10,8 @@ import objects.Product;
 import objects.Stock;
 
 public class OptionMenu {
-    Stock stock = new Stock();
-    List<Coupon> coupons = new ArrayList<Coupon>();
+    private Stock stock = new Stock();
+    private List<Coupon> coupons = new ArrayList<Coupon>();
 
     public void showMenu() {
         while (true) {
