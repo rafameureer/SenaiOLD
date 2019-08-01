@@ -6,14 +6,13 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import objetosConta.Conta;
-import objetosConta.Movimentacao;
 
 /**
  * MenuOpcoes
  */
 public class MenuOpcoes {
 
-    private List<Conta> contas = new ArrayList();
+    private List<Conta> contas = new ArrayList<Conta>();
 
     public void exibirMenu() {
         while (true) {

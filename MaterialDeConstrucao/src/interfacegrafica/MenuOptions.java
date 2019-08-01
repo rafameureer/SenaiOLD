@@ -16,7 +16,7 @@ public class MenuOptions {
     public void showMenu() {
         while (true) {
             int action = Integer.parseInt(JOptionPane.showInputDialog("1 - Cadastrar Produtos\n"
-                    + "2 - Listar os Produtos\n" + "3 - adicionar Produtos\n" + "4 - Vizualizar os cupons\n"
+                    + "2 - Listar os Produtos\n" + "3 - Adicionar Produtos\n" + "4 - Vizualizar os cupons\n"
                     + "5 - Calcular o valor dos cupons\n" + "6 - Vender Produto\n" + "7 - Sair"));
             switch (action) {
             case 1:
@@ -98,6 +98,8 @@ public class MenuOptions {
             }
             product.addQuantity(quantity);
             JOptionPane.showMessageDialog(null, "Produto adicionado");
+        } else {
+            JOptionPane.showMessageDialog(null, "Você digitou um produto ou código inexistente");
         }
     }
 

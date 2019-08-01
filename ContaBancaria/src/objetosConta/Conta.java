@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 /**
  * Conta
  */
@@ -96,24 +98,24 @@ public class Conta {
         return message;
     }
 
-    public void consultarSaldo() {
-        // sem sentido visto que não é preciso fazer nenhuma verificação pode ser
-        // utilizado o proprio get do atributo
-    }
-
     public String gerarExtrato() {
         String extrato = "";
         int posicaoDeposito = 1;
         int posicaoSaque = 1;
-        for (Movimentacao movimentacao : this.listaDeMovimentacao) {
-            if (movimentacao.getTipo() == 1) {
-                extrato += "Saque " + posicaoSaque + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
-                        + movimentacao.getValor() + "\n";
-                posicaoSaque++;
-            } else {
-                extrato += "Deposito " + posicaoDeposito + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
-                        + movimentacao.getValor() + "\n";
-                posicaoDeposito++;
+        if (this.listaDeMovimentacao.isEmpty()) {
+            extrato = "A lista de movimentação esta vazia";
+        } else {
+
+            for (Movimentacao movimentacao : this.listaDeMovimentacao) {
+                if (movimentacao.getTipo() == 1) {
+                    extrato += "Saque " + posicaoSaque + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
+                            + movimentacao.getValor() + "\n";
+                    posicaoSaque++;
+                } else {
+                    extrato += "Deposito " + posicaoDeposito + "\n" + "Data: " + movimentacao.getData() + "\n"
+                            + "Valor: " + movimentacao.getValor() + "\n";
+                    posicaoDeposito++;
+                }
             }
         }
         return extrato;

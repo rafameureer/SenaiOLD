@@ -54,23 +54,24 @@ public class Fabrica {
     }
 
     public void fabricarCarro(int quantidadeCarros) {
-        if (this.carros.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Não temos carros no estoque");
-        } else {
-            for (int i = 0; i < quantidadeCarros; i++) {
-                Carro carro = new Carro();
-                carro.setModelo(JOptionPane.showInputDialog("Qual o modelo do carro " + (i + 1)));
-                carro.setCor(JOptionPane.showInputDialog("Qual a cor do carro " + (i + 1)));
-                this.carros.add(carro);
-            }
+
+        for (int i = 0; i < quantidadeCarros; i++) {
+            Carro carro = new Carro();
+            carro.setModelo(JOptionPane.showInputDialog("Qual o modelo do carro " + (i + 1)));
+            carro.setCor(JOptionPane.showInputDialog("Qual a cor do carro " + (i + 1)));
+            this.carros.add(carro);
         }
     }
 
     public void mostrarCarros() {
-        String carros = "";
-        for (Carro carro : this.carros) {
-            carros += "Modelo: " + carro.getModelo() + " cor: " + carro.getCor() + "\n";
+        if (this.carros.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Não temos carros no estoque");
+        } else {
+            String carros = "";
+            for (Carro carro : this.carros) {
+                carros += "Modelo: " + carro.getModelo() + " cor: " + carro.getCor() + "\n";
+            }
+            JOptionPane.showMessageDialog(null, carros);
         }
-        JOptionPane.showMessageDialog(null, carros);
     }
 }
