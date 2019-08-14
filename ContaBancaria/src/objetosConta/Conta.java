@@ -105,7 +105,6 @@ public class Conta {
         if (this.listaDeMovimentacao.isEmpty()) {
             extrato = "A lista de movimentação esta vazia";
         } else {
-
             for (Movimentacao movimentacao : this.listaDeMovimentacao) {
                 if (movimentacao.getTipo() == 1) {
                     extrato += "Saque " + posicaoSaque + "\n" + "Data: " + movimentacao.getData() + "\n" + "Valor: "
