@@ -12,44 +12,61 @@
     margin: 0;
 }
 
+body {
+    background-color: #292828;
+}
+
 header {
     background-color: #292828;
+    border-bottom: 1px solid #fff;
 }
 
 .subTitle {
     position: absolute;
     background-color: #39bf24;
     top: 5vh;
-    width: 75vw;
+    width: 53vw;
+    color: #fff;
     left: 25vw;
-    padding: 0vh 0 0vh 0;
+    padding: 0;
+}
+
+#subTitleLabel {
+    margin-left: 15vw;
 }
 
 .label {
-    padding: 5px 10px 5px 10px;
-    margin: 0px;
-    margin-left: 1vw;
-    width: 30vw;
-    background-color: #39bf24;
+    margin-top: 3px;
 }
 
 nav a div {
     float: left;
-    width: 33.33vw;
-    /* margin-left: 2.5vw; */
-    background-color: #292828;
+    width: 30vw;
+    margin-left: 2.3vw;
+    margin-right: 0.5vw;
+    background-color: #39bf24;
     text-align: center;
     color: #fff;
     height: 5vh;
     font-size: 20px;
-}
-
-label:hover {
-    background-color: #39bf24;
-    color: #000;
+    padding: 1vh 0vh 1vh 0vh;
 }
 
 body {
     padding: 0;
     margin: 0;
+}
+
+section {
+    clear: both;
+    min-height: 66.5vh;
+    width: 100%;
+    margin-top: 0;
+}
+
+footer {
+    background-color: #39bf24;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
 }
