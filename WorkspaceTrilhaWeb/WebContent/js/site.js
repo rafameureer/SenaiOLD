@@ -1,12 +1,18 @@
 function validaFaleConosco() {
-    if (document.frmfaleconosco.txtnome.value == "") {
+    const nome = document.frmfaleconosco.txtnome;
+    const expRegNome = new RegExp('^[A-zÀ-ü]{3,}([ ]{1}[A-zÀ-ü]{2,})+$');
+
+    const fone = document.frmfaleconosco.txtfone;
+    const expRegFone = new RegExp('^[(]{1}[1-9]{2}[)]{1}[0-9]{4-5}[-]{1}[0-9]{4}$');
+
+    if (!expRegNome.test(nome.value)) {
         alert("Preencha o campo Nome.");
-        document.frmfaleconosco.txtnome.focus();
+        nome.focus();
         return false;
     }
-    if (document.frmfaleconosco.txtfone.value == "") {
+    if (!expRegFone.test(fone.value)) {
         alert("Preencha o campo Telefone.");
-        document.frmfaleconosco.txtfone.focus();
+        fone.focus();
         return false;
     }
     if (document.frmfaleconosco.txtemail.value == "") {

@@ -1,0 +1,55 @@
+#nodeJsLogo {
+    width: 20vw;
+    height: 20vh;
+    margin-left: 1vw;
+}
+
+.title {
+    position: absolute;
+    top: 2vh;
+    left: 45vw;
+    font-size: 40px;
+    margin: 0;
+}
+
+header {
+    background-color: #292828;
+}
+
+.subTitle {
+    position: absolute;
+    background-color: #39bf24;
+    top: 5vh;
+    width: 75vw;
+    left: 25vw;
+    padding: 0vh 0 0vh 0;
+}
+
+.label {
+    padding: 5px 10px 5px 10px;
+    margin: 0px;
+    margin-left: 1vw;
+    width: 30vw;
+    background-color: #39bf24;
+}
+
+nav a div {
+    float: left;
+    width: 33.33vw;
+    /* margin-left: 2.5vw; */
+    background-color: #292828;
+    text-align: center;
+    color: #fff;
+    height: 5vh;
+    font-size: 20px;
+}
+
+label:hover {
+    background-color: #39bf24;
+    color: #000;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
